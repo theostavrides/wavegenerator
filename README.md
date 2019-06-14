@@ -9,4 +9,3 @@ An animation web app that draws abstract forms on a canvas. Users interact with 
 - Pick a waveform in the dropdown menu - None, Sine, Cos, Random.
 - Change the velocity and amplitude of the waveform with the two nobs.
 
-The only dependency is xknob.js - the rest is
