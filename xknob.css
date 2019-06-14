@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* This CSS file contains some default styling. */
+
+x-knob {
+	display: inline-table;
+	width: 20px;
+	height: 20px;
+	padding-left: 2px;
+	padding-right: 2px;
+	position: relative;
+	top: 4px;
+
+	/* An internal element is target of pointer-events, but not this external x-knob element. */
+	pointer-events: none;
+}
+
+/*
+This only looks good if divisions >= 2.
+x-knob::shadow .knob_gfx {
+	transition: 200ms transform;
+}
+*/

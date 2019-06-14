@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wave Generator</title>
+
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="style.css">
+
+
+	<!-- KNOB FILES -->
+	<script src="xknob.js" type="text/javascript" async></script>
+    <link href="xknob.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+	if (!document.registerElement) {
+	document.writeln(decodeURI('%3Cscript%20src=%22https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.12/webcomponents.min.js%22%20type=%22text/javascript%22%3E%3C/script%3E'));
+	}
+
+
+</script>
+</head>
+<body>
+
+
+<div class="center-text"><img src="sinewave.jpg" style="height: 60px"></img></div>
+
+<div id="flex-zone">
+	<div id="left" class="column">
+
+	    <div class="top-left">
+	    </div>
+	    
+	    <div class="bottom">
+
+	    	<!-- CANVAS -->
+	    	<canvas id="canvas" height="500px" width="880px"></canvas> 
+	    	<p></p>
+	    </div>
+	</div>
+
+	<div id="right" class="column">
+	    <div class="top-right">
+	    </div>
+	    <div class="bottom">
+		    <div class="flex-container" id="pannelBox"> 
+
+		  	    <!-- NEW PANNELS WILL BE APPENDED HERE -->
+
+		  	</div> <!-- close flex container-->
+
+
+
+		  	<div class="flex-container">    
+				<div class='center-text' onclick='addPannel()' id="addPannel">+</div> 
+			</div> <!-- close flex container-->
+
+	    </div> <!-- close div class bottom -->
+	</div> <!-- close id right class bottom -->
+</div>
+
+
+
+</body>
+
+
+
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</html>
+
+
+
+
+
+
+

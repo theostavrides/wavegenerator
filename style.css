@@ -1,0 +1,171 @@
+/* FLEXBOX SHIT */
+
+
+html {
+    height: 100%;
+}
+
+
+
+
+#flex-zone {
+    margin-top: 10px;
+     
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
+}
+
+.column {
+    height: 100%;  /*allows both columns to span the full height of the browser window*/
+    display: flex;
+    flex-direction: column;  /*places the left and right headers above the bottom content*/
+}
+
+#left {
+    flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
+}
+
+.top-left {
+    flex-shink: 0;
+}
+
+.top-right {
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-left: 20px;
+    text-decoration: underline;
+
+
+}
+
+ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+
+.bottom {
+    flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+    overflow-y: auto;  /*adds scroll to this container*/
+    margin-left: 20px;
+}
+
+
+/* PROJECT CODE */
+
+#canvas {
+    border: 1px solid black;   
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+/* PANNEL */
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #395f76;
+    flex-direction: column;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 315px;
+    margin: 2px;
+    padding: 2px;
+    
+
+}
+
+/* CUSTOM SLIDER */
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 90px;
+    height: 10px;
+    background: grey;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    display: inline;
+
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 10px;
+    background: red;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+/* Select Box */
+
+.select-style {
+    border: none;
+    width: 60px;
+    height: 15px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+
+}
+
+.select-style select {
+    padding: 0px;
+    width: 60px;
+    height: 17px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    background-image: none;
+    -webkit-appearance: none;
+    padding: 2px;
+    background-color: #D8D8D8;
+    border: 1px solid black;
+    text-align-last:center;
+
+
+}
+
+.select-style select:focus {
+    outline: none;
+
+}
+
+/* KNOB */
+
+.knob {
+    display: inline;
+}
+
+
+
+
+/* ADD PANNEL BOX */
+#addPannel:hover {
+    background-color: #d8d8d8;
+}
+
+
+
+
