@@ -3,3 +3,8 @@ An animation web app that draws abstract forms on a canvas. Users interact with 
 
 ## Screenshot
 <img src="https://raw.githubusercontent.com/theostavrides/wavegenerator/master/screenshots/2.png"/>
+
+## Use
+- Control the x and y axis of the vertices using the two horizonal sliders
+- Pick a waveform in the dropdown menu - None, Sine, Cos, Random.
+- Change the velocity and amplitude of the waveform with the two nobs.
