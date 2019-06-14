@@ -10,7 +10,7 @@ html {
 
 #flex-zone {
     margin-top: 10px;
-     
+
     display: flex;  /*enables flex content for its children*/
     box-sizing: border-box;
 }
@@ -54,7 +54,7 @@ ul {
 /* PROJECT CODE */
 
 #canvas {
-    border: 1px solid black;   
+    border: 1px solid black;
 }
 
 .center-text {
@@ -62,7 +62,7 @@ ul {
 }
 
 
-/* PANNEL */
+/* PANEL */
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
@@ -75,7 +75,7 @@ ul {
     width: 315px;
     margin: 2px;
     padding: 2px;
-    
+
 
 }
 
@@ -161,8 +161,8 @@ ul {
 
 
 
-/* ADD PANNEL BOX */
-#addPannel:hover {
+/* ADD PANEL BOX */
+#addPanel:hover {
     background-color: #d8d8d8;
 }
 

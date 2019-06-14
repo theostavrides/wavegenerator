@@ -2,7 +2,7 @@
 
 // ------------------------- INTERFACE -------------------------
 
-class Pannel {
+class Panel {
 	constructor(id,x,y,wave,amplitude,velocity) {
 		this.id = id;
 		this.x = x;
@@ -29,24 +29,24 @@ class Pannel {
 
 
 
-let pannel1 = new Pannel('pannel1',400,100,'none',0.4,0.4);  
-let pannel2 = new Pannel('pannel2',200,350,'sine',0,0);
-let pannel3 = new Pannel('pannel3',200,150,'sine',0,0);
-let pannel4 = new Pannel('pannel4',400,400,'none',0,0);
-let pannel5 = new Pannel('pannel5',500,250,'none',0,0);
-let pannel6 = new Pannel('pannel6',400,100,'none',0,0);
+let panel1 = new Panel('panel1',400,100,'none',0.4,0.4);
+let panel2 = new Panel('panel2',200,350,'sine',0,0);
+let panel3 = new Panel('panel3',200,150,'sine',0,0);
+let panel4 = new Panel('panel4',400,400,'none',0,0);
+let panel5 = new Panel('panel5',500,250,'none',0,0);
+let panel6 = new Panel('panel6',400,100,'none',0,0);
 
-pannels = [pannel1,pannel2,pannel3,pannel4,pannel5,pannel6];
+panels = [panel1,panel2,panel3,panel4,panel5,panel6];
 
 
-function makePannel(obj) {
-	let pannelBox = document.getElementById('pannelBox');
+function makePanel(obj) {
+	let panelBox = document.getElementById('panelBox');
 
 	//~~~~~~~~~~~ SLIDERS ~~~~~~~~~~~~
 
 	//create slide-container
 	let div0 = document.createElement('div');
-	let div1 = document.createElement('div'); //the slide container 
+	let div1 = document.createElement('div'); //the slide container
 	div1.classList.add("slidecontainer");
 
 	//create sliders
@@ -91,34 +91,34 @@ function makePannel(obj) {
 	// set Attribute Nodes
 	slider1.setAttributeNode(slider1AttType);
 	slider1.setAttributeNode(slider1AttMin);
-	slider1.setAttributeNode(slider1AttMax); 
+	slider1.setAttributeNode(slider1AttMax);
 	slider1.setAttributeNode(slider1AttValue);
 	slider1.setAttributeNode(slider1AttClass);
 	slider1.setAttributeNode(slider1AttId);
-	
+
 
 
 	slider2.setAttributeNode(slider2AttType);
 	slider2.setAttributeNode(slider2AttMin);
-	slider2.setAttributeNode(slider2AttMax); 
+	slider2.setAttributeNode(slider2AttMax);
 	slider2.setAttributeNode(slider2AttValue);
 	slider2.setAttributeNode(slider2AttClass);
 	slider2.setAttributeNode(slider2AttId);
 
-	pannelBox.appendChild(div0);
+	panelBox.appendChild(div0);
 	div0.appendChild(div1);
 	div1.appendChild(slider1); //everything will appended to div1
 	div1.appendChild(slider2);
 
 	// event listeners
 	slider1.oninput = function() {
-	obj.x = this.value;  
-	
+	obj.x = this.value;
+
 	};
 
 	slider2.oninput = function() {
-	obj.y = this.value;  
-	
+	obj.y = this.value;
+
 	};
 
 	//  ~~~~~~~~~  DROPDOWN MENU ~~~~~~~~~~~
@@ -149,11 +149,11 @@ function makePannel(obj) {
 	}
 	menu.value = obj.wave;
 
-	//event listener 
+	//event listener
 
 	menu.addEventListener('change', function() {
 		obj.wave = this.value;
-	}); 
+	});
 
 
 	//	~~~~~~~~ KNOBS ~~~~~~~~
@@ -210,9 +210,9 @@ function makePannel(obj) {
 	// event listeners
 	knob1.addEventListener('input', function(ev) {
 		obj.amplitude = (ev.target.value + .4) * 250;
-		  // the knob value needs to be adjusted because it 
+		  // the knob value needs to be adjusted because it
 		  // is too small.
-	});												  
+	});
 
 	knob2.addEventListener('input', function(ev) {
 		obj.velocity = (ev.target.value + .4)* .1;
@@ -222,21 +222,21 @@ function makePannel(obj) {
 
 
 
-makePannel(pannel1);
-makePannel(pannel2);
-makePannel(pannel3);
-makePannel(pannel4);
-makePannel(pannel5);
-makePannel(pannel6);
+makePanel(panel1);
+makePanel(panel2);
+makePanel(panel3);
+makePanel(panel4);
+makePanel(panel5);
+makePanel(panel6);
 
 
-let pannelCount = 6;
-function addPannel() {
-	pannelCount += 1;
-	eval(`pannel${pannelCount} = new Pannel('pannel${pannelCount}',200,200,'sine',0.2,0.2);`);
-	eval(`makePannel(pannel${pannelCount})`);
-	eval(`pannels.push(pannel${pannelCount})`)
-	
+let panelCount = 6;
+function addPanel() {
+	panelCount += 1;
+	eval(`panel${panelCount} = new Panel('panel${panelCount}',200,200,'sine',0.2,0.2);`);
+	eval(`makePanel(panel${panelCount})`);
+	eval(`panels.push(panel${panelCount})`)
+
 };
 
 
@@ -246,26 +246,26 @@ ctx = document.getElementById('canvas').getContext('2d');
 
 lc = 0;  //loop count
 
-function f1() {	
+function f1() {
 	for (i=0;i<30;i++) {
 
-		for (i2=0;i2<pannels.length-1;i2++) {
+		for (i2=0;i2<panels.length-1;i2++) {
 			ctx.beginPath();
-			ctx.moveTo(i*5 + Number(pannels[i2].x) + pannels[i2].formulaGen(), Number(pannels[i2].y) + pannels[i2].formulaGen());
-			ctx.lineTo(i*5 + Number(pannels[i2+1].x) + pannels[i2+1].formulaGen(), Number(pannels[i2+1].y) + pannels[i2+1].formulaGen());
+			ctx.moveTo(i*5 + Number(panels[i2].x) + panels[i2].formulaGen(), Number(panels[i2].y) + panels[i2].formulaGen());
+			ctx.lineTo(i*5 + Number(panels[i2+1].x) + panels[i2+1].formulaGen(), Number(panels[i2+1].y) + panels[i2+1].formulaGen());
 			ctx.stroke();
 			ctx.closePath();
 		}
 	}
 }
-	
+
 function animate() {
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	f1();
 	lc++;
 	setTimeout(animate,20);
 
-	
+
 }
 
 animate();
